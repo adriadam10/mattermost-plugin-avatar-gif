@@ -1,0 +1,37 @@
+{
+    "id": "com.github.adriadam10.avatar-gif",
+    "name": "Animated Avatars",
+    "description": "Animated GIF profile pictures with /avatar-gif.",
+    "homepage_url": "https://github.com/adriadam10/mattermost-plugin-avatar-gif",
+    "support_url": "https://github.com/adriadam10/mattermost-plugin-avatar-gif/issues",
+    "version": "0.1.0",
+    "min_server_version": "12.0.0",
+    "server": {
+        "executables": {
+            "linux-amd64": "server/dist/plugin-linux-amd64",
+            "linux-arm64": "server/dist/plugin-linux-arm64"
+        }
+    },
+    "webapp": {
+        "bundle_path": "webapp/dist/main.js"
+    },
+    "settings_schema": {
+        "header": "Animated GIF profile pictures. Only works with local file storage.",
+        "settings": [
+            {
+                "key": "MaxSizeMB",
+                "display_name": "Maximum GIF size (MB)",
+                "type": "number",
+                "default": 5,
+                "help_text": "Largest GIF a user can upload or link, before it is resized to 128×128."
+            },
+            {
+                "key": "MaxFrames",
+                "display_name": "Maximum frames",
+                "type": "number",
+                "default": 200,
+                "help_text": "GIFs with more frames are rejected."
+            }
+        ]
+    }
+}
